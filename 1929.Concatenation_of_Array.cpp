@@ -4,12 +4,9 @@
 using namespace std;
 
 vector<int> getConcatenation(vector<int>& nums) {
-    vector<int> ans(2 * nums.size());
-    for (size_t i = 0; i < ans.size(); i++) {
-        ans[i] = nums[i];
-        ans[i - nums.size()] = nums[i];
-    }
-    return ans;
+    int n = nums.size();
+    for (int i = 0; i < n; i++) nums.push_back(nums[i]);
+    return nums;
 }
 
 int main() {
